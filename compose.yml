@@ -7,18 +7,18 @@ services:
       - LISTEN_ALL_NETWORKS=true
       - AUTO_UPDATE_FIKA=true
       - AUTO_UPDATE_SPT=true
+      - TAKE_OWNERSHIP=false
+      - CHANGE_PERMISSIONS=false
       - TZ=America/Denver
     volumes:
-      - /mnt/tank/sptd/SPT:/opt/server:Z
+      - /mnt/tank/sptd-test/backend:/opt/server:Z
     network_mode: host
-    # ports:
-    #   - 6969:6969
 
   dc1:
     container_name: fika-dc1
     image: ghcr.io/zhliau/fika-headless-docker:latest
     volumes:
-      - /mnt/tank/sptd/SPT-dc1:/opt/tarkov:Z
+      - /mnt/tank/sptd-test/dc1:/opt/tarkov:Z
     environment:
       - SERVER_URL=host.containers.internal
       - SERVER_PORT=6969
@@ -28,12 +28,16 @@ services:
       - PROFILE_ID=6754ba4e000485cf3aeccebc
     ports:
       - 25565:25565/udp
+    depends_on:
+      backend:
+        condition: service_healthy
+        restart: true
 
   dc2:
     container_name: fika-dc2
     image: ghcr.io/zhliau/fika-headless-docker:latest
     volumes:
-      - /mnt/tank/sptd/SPT-dc2:/opt/tarkov:Z
+      - /mnt/tank/sptd-test/dc2:/opt/tarkov:Z
     environment:
       - SERVER_URL=host.containers.internal
       - SERVER_PORT=6969
@@ -43,12 +47,16 @@ services:
       - PROFILE_ID=67551cc900048c617b771167
     ports:
       - 25566:25566/udp
+    depends_on:
+      backend:
+        condition: service_healthy
+        restart: true
 
   dc3:
     container_name: fika-dc3
     image: ghcr.io/zhliau/fika-headless-docker:latest
     volumes:
-      - /mnt/tank/sptd/SPT-dc3:/opt/tarkov:Z
+      - /mnt/tank/sptd-test/dc3:/opt/tarkov:Z
     environment:
       - SERVER_URL=host.containers.internal
       - SERVER_PORT=6969
@@ -58,3 +66,7 @@ services:
       - PROFILE_ID=67560726000064270bab9f4e
     ports:
       - 25567:25567/udp
+    depends_on:
+      backend:
+        condition: service_healthy
+        restart: true
