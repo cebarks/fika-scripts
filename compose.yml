@@ -9,7 +9,7 @@ services:
       - AUTO_UPDATE_SPT=true
       - TZ=America/Denver
     volumes:
-      - /mnt/tank/sptd/SPT:/opt/server:Z
+      - /mnt/tank/sptd/backend:/opt/server:Z
     network_mode: host
     # ports:
     #   - 6969:6969
@@ -18,7 +18,7 @@ services:
     container_name: fika-dc1
     image: ghcr.io/zhliau/fika-headless-docker:latest
     volumes:
-      - /mnt/tank/sptd/SPT-dc1:/opt/tarkov:Z
+      - /mnt/tank/sptd/dc1:/opt/tarkov:Z
     environment:
       - SERVER_URL=host.containers.internal
       - SERVER_PORT=6969
@@ -33,7 +33,7 @@ services:
     container_name: fika-dc2
     image: ghcr.io/zhliau/fika-headless-docker:latest
     volumes:
-      - /mnt/tank/sptd/SPT-dc2:/opt/tarkov:Z
+      - /mnt/tank/sptd/dc2:/opt/tarkov:Z
     environment:
       - SERVER_URL=host.containers.internal
       - SERVER_PORT=6969
@@ -48,7 +48,7 @@ services:
     container_name: fika-dc3
     image: ghcr.io/zhliau/fika-headless-docker:latest
     volumes:
-      - /mnt/tank/sptd/SPT-dc3:/opt/tarkov:Z
+      - /mnt/tank/sptd/dc3:/opt/tarkov:Z
     environment:
       - SERVER_URL=host.containers.internal
       - SERVER_PORT=6969
