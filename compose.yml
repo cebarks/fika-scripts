@@ -2,7 +2,6 @@ services:
   backend:
     container_name: spt-backend
     image: ghcr.io/zhliau/fika-spt-server-docker:3.10.5
-    network_mode: host
     environment:
       - INSTALL_FIKA=true
       - LISTEN_ALL_NETWORKS=true
@@ -11,13 +10,13 @@ services:
       - TZ=America/Denver
     volumes:
       - /mnt/tank/sptd/SPT:/opt/server:Z
+    network_mode: host
     # ports:
     #   - 6969:6969
 
   dc1:
     container_name: fika-dc1
     image: ghcr.io/zhliau/fika-headless-docker:latest
-    # network_mode: host
     volumes:
       - /mnt/tank/sptd/SPT-dc1:/opt/tarkov:Z
     environment:
@@ -33,7 +32,6 @@ services:
   dc2:
     container_name: fika-dc2
     image: ghcr.io/zhliau/fika-headless-docker:latest
-    # network_mode: host
     volumes:
       - /mnt/tank/sptd/SPT-dc2:/opt/tarkov:Z
     environment:
@@ -49,7 +47,6 @@ services:
   dc3:
     container_name: fika-dc3
     image: ghcr.io/zhliau/fika-headless-docker:latest
-    # network_mode: host
     volumes:
       - /mnt/tank/sptd/SPT-dc3:/opt/tarkov:Z
     environment:
