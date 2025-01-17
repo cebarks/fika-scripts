@@ -34,9 +34,9 @@ restart-backend:
 
 copy-mods:
     cp -rv /export/public/mods/* {{backendDir}}/
-    cp -rv /export/public/mods/* {{baseDir}}/dc1/
-    cp -rv /export/public/mods/* {{baseDir}}/dc3/
-    cp -rv /export/public/mods/* {{baseDir}}/dc2/
+    cp -r /export/public/mods/* {{baseDir}}/dc1/
+    cp -r /export/public/mods/* {{baseDir}}/dc3/
+    cp -r /export/public/mods/* {{baseDir}}/dc2/
 
     rm SPT/BepInEx/plugins/Fika.Dedicated.dll
 
