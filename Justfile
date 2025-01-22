@@ -8,8 +8,9 @@ logs TARGET:
     podman-compose logs -f {{TARGET}}
 
 start:
+    # podman-compose up -d 
     podman-compose up -d backend
-    sleep 30
+    sleep 20
     podman-compose up -d dc1 dc2 dc3
 
 list-players:

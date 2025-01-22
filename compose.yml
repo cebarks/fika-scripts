@@ -11,8 +11,12 @@ services:
     volumes:
       - /mnt/tank/sptd/backend:/opt/server:Z
     network_mode: host
-    # ports:
-    #   - 6969:6969
+    healthcheck:
+      test: ["CMD-SHELL", "curl --fail -X GET -H 'responsecompressed: 0' http://mars.grv.st:6969/fika/presence/get || false"]
+      interval: 30s
+      retries: 12
+      start_period: 30s
+      timeout: 3s
 
   dc1:
     container_name: fika-dc1
@@ -23,11 +27,15 @@ services:
       - SERVER_URL=host.containers.internal
       - SERVER_PORT=6969
       - AUTO_RESTART_ON_RAID_END=true
-      - FSYNC=false
+      - ESYNC=true
       - ENABLE_LOG_PURGE=false
       - PROFILE_ID=6754ba4e000485cf3aeccebc
     ports:
       - 25565:25565/udp
+    depends_on:
+      backend:
+        condition: service_healthy
+        restart: true
 
   dc2:
     container_name: fika-dc2
@@ -38,11 +46,15 @@ services:
       - SERVER_URL=host.containers.internal
       - SERVER_PORT=6969
       - AUTO_RESTART_ON_RAID_END=true
-      - FSYNC=false
+      - ESYNC=true
       - ENABLE_LOG_PURGE=false
       - PROFILE_ID=67551cc900048c617b771167
     ports:
       - 25566:25566/udp
+    depends_on:
+      backend:
+        condition: service_healthy
+        restart: true
 
   dc3:
     container_name: fika-dc3
@@ -53,8 +65,12 @@ services:
       - SERVER_URL=host.containers.internal
       - SERVER_PORT=6969
       - AUTO_RESTART_ON_RAID_END=true
-      - FSYNC=false
+      - ESYNC=true
       - ENABLE_LOG_PURGE=false
       - PROFILE_ID=67560726000064270bab9f4e
     ports:
       - 25567:25567/udp
+    depends_on:
+      backend:
+        condition: service_healthy
+        restart: true
