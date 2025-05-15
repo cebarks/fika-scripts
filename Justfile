@@ -23,13 +23,16 @@ stop:
     podman-compose down
 
 list-players:
-    curl --silent -X GET -H "responsecompressed: 0" http://mars.grv.st:6969/fika/presence/get | jq
+    curl --silent -X GET -H "responsecompressed: 0" http://localhost:6969/fika/presence/get | jq
+
+list-headless:
+    curl --silent -X GET -H "responsecompressed: 0" https://localhost:6969/fika/headless/available -k | jq
 
 broadcast MESSAGE:
-    curl --output /dev/null -X POST -H "requestcompressed: 0" \
+    curl -k --output /dev/null -X POST -H "requestcompressed: 0" \
     -H "Content-Type: application/json" \
     -d '{"notification": "{{MESSAGE}}", "notificationIcon": 0}' \
-    http://mars.grv.st:6969/fika/notification/push
+    https://localhost:6969/fika/notification/push
 
 restart: stop start
 

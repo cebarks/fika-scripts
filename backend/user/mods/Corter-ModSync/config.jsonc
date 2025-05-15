@@ -46,6 +46,11 @@
 		"user/mods/**/node_modules",
 		"user/mods/**/*.js",
 		"user/mods/**/*.js.map",
-		"**/*:Zone.Identifier"
+		"**/*:Zone.Identifier",
+		"BepInEx/plugins/AmandsGraphics.dll",
+		"BepInEx/plugins/CactusPie.RamCleanerInterval.dll",
+		"BepInEx/plugins/IhanaMies-LootValue.dll",
+		"BepInEx/plugins/DynamicMaps/**/*",
+		"BepInEx/plugins/MoreCheckmarks/**/*"
 	]
 }
