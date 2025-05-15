@@ -1,13 +1,13 @@
 {
-  "live-like": 35,
-  "more-scavs": 8,
-  "more-pmcs": 8,
-  "quiet-raids": 5,
+  "live-like": 69,
+  "more-scavs": 10,
+  "more-pmcs": 15,
+  "quiet-raids": 0,
   "more-scavs-and-pmcs": 5,
-  "main-boss-roaming": 5,
-  "sniper-buddies": 4,
-  "boss-invasion": 2,
+  "main-boss-roaming": 0,
+  "sniper-buddies": 0,
+  "boss-invasion": 1,
   "rogue-invasion": 0,
   "raider-invasion": 0,
-  "insanity": 2
+  "insanity": 0
 }

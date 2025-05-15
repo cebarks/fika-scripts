@@ -9,7 +9,7 @@
   "scavWaveQuantity": 1,
 
   "startingPmcs": false,
-  "pmcWaveDistribution": 0.6,
+  "pmcWaveDistribution": 0.8,
   "pmcWaveQuantity": 1,
 
   "randomSpawns": false,
@@ -26,8 +26,8 @@
   "scavGroupChance": 0.1,
   "pmcGroupChance": 0.1,
   
-  "pmcMaxGroupSize": 4,
-  "scavMaxGroupSize": 3,
+  "pmcMaxGroupSize": 5,
+  "scavMaxGroupSize": 4,
   "sniperMaxGroupSize": 1,
 
   "bossOpenZones": false,
