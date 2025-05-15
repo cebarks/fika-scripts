@@ -1,0 +1,15 @@
+{
+  "enabledMaps": {
+    "bigmap": true,
+    "shoreline": true,
+    "lighthouse": true,
+    "woods": true,
+    "rezervbase": false,
+    "laboratory": false,
+    "tarkovstreets": false,
+    "factory4_day": false,
+    "factory4_night": false,
+    "sandbox_high": false,
+    "interchange": false
+  }
+}

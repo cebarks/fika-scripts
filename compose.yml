@@ -1,72 +1,51 @@
 services:
   backend:
-    container_name: spt-backend
-    image: ghcr.io/zhliau/fika-spt-server-docker:3.10.5
+    container_name: backend
+    image: ghcr.io/zhliau/fika-spt-server-docker:3.11.3
     environment:
       - INSTALL_FIKA=true
       - LISTEN_ALL_NETWORKS=true
       - AUTO_UPDATE_FIKA=true
-      - AUTO_UPDATE_SPT=true
+      - AUTO_UPDATE_SPT=false
       - TAKE_OWNERSHIP=false
       - CHANGE_PERMISSIONS=false
       - TZ=America/Denver
+      - NUM_HEADLESS_PROFILES=2
     volumes:
-      - /mnt/tank/sptd-test/backend:/opt/server:Z
+      - /mnt/md0/sptd-test/backend:/opt/server:Z
     network_mode: host
 
-  dc1:
-    container_name: fika-dc1
-    image: ghcr.io/zhliau/fika-headless-docker:latest
+  hc1:
+    container_name: hc1
+    image: ghcr.io/zhliau/fika-headless-docker:v2.1.0
     volumes:
-      - /mnt/tank/sptd-test/dc1:/opt/tarkov:Z
+      - /mnt/md0/sptd-test/hc1:/opt/tarkov:Z
+    # devices:
+    #   - /dev/ntsync:/dev/ntsync
     environment:
       - SERVER_URL=host.containers.internal
       - SERVER_PORT=6969
-      - AUTO_RESTART_ON_RAID_END=true
       - FSYNC=false
       - ENABLE_LOG_PURGE=false
-      - PROFILE_ID=6754ba4e000485cf3aeccebc
+      - USE_MODSYNC=true
+      - PROFILE_ID=68253357ab4d3800210023a5
     ports:
       - 25565:25565/udp
-    depends_on:
-      backend:
-        condition: service_healthy
-        restart: true
 
-  dc2:
-    container_name: fika-dc2
-    image: ghcr.io/zhliau/fika-headless-docker:latest
-    volumes:
-      - /mnt/tank/sptd-test/dc2:/opt/tarkov:Z
-    environment:
-      - SERVER_URL=host.containers.internal
-      - SERVER_PORT=6969
-      - AUTO_RESTART_ON_RAID_END=true
-      - FSYNC=false
-      - ENABLE_LOG_PURGE=false
-      - PROFILE_ID=67551cc900048c617b771167
-    ports:
-      - 25566:25566/udp
-    depends_on:
-      backend:
-        condition: service_healthy
-        restart: true
-
-  dc3:
-    container_name: fika-dc3
-    image: ghcr.io/zhliau/fika-headless-docker:latest
-    volumes:
-      - /mnt/tank/sptd-test/dc3:/opt/tarkov:Z
-    environment:
-      - SERVER_URL=host.containers.internal
-      - SERVER_PORT=6969
-      - AUTO_RESTART_ON_RAID_END=true
-      - FSYNC=false
-      - ENABLE_LOG_PURGE=false
-      - PROFILE_ID=67560726000064270bab9f4e
-    ports:
-      - 25567:25567/udp
-    depends_on:
-      backend:
-        condition: service_healthy
-        restart: true
+  # hc2:
+  #   container_name: hc2
+  #   image: ghcr.io/zhliau/fika-headless-docker:latest
+  #   volumes:
+  #     - /mnt/md0/sptd-test/hc2:/opt/tarkov:Z
+  #   # devices:
+  #   #   - /dev/ntsync:/dev/ntsync
+  #   environment:
+  #     - SERVER_URL=host.containers.internal
+  #     - SERVER_PORT=6969
+  #     - AUTO_RESTART_ON_RAID_END=true
+  #     - FSYNC=false
+  #     - ENABLE_LOG_PURGE=false
+  #     - USE_MODSYNC=true
+  #     - PROFILE_ID=68253357ab4d380021002267
+  #   ports:
+  #     - 25566:25566/udp
