@@ -66,3 +66,4 @@ backend/user/mods/Jehree-GildedKeyStorage/config/config.default.json5
 backend/user/mods/lacyway-mergeconsumables/biome.json
 backend/BepInEx/patchers
 backend/BepInEx/plugins
+backend/backups/
