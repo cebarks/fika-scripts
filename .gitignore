@@ -67,3 +67,4 @@ backend/user/mods/lacyway-mergeconsumables/biome.json
 backend/BepInEx/patchers
 backend/BepInEx/plugins
 backend/backups/
+hc1/BepInEx/config/com.cactuspie.ramcleanerinterval.cfg
