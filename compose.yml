@@ -32,20 +32,20 @@ services:
     ports:
       - 25565:25565/udp
 
-  # hc2:
-  #   container_name: hc2
-  #   image: ghcr.io/zhliau/fika-headless-docker:latest
-  #   volumes:
-  #     - /mnt/md0/sptd-test/hc2:/opt/tarkov:Z
-  #   # devices:
-  #   #   - /dev/ntsync:/dev/ntsync
-  #   environment:
-  #     - SERVER_URL=host.containers.internal
-  #     - SERVER_PORT=6969
-  #     - AUTO_RESTART_ON_RAID_END=true
-  #     - FSYNC=false
-  #     - ENABLE_LOG_PURGE=false
-  #     - USE_MODSYNC=true
-  #     - PROFILE_ID=68253357ab4d380021002267
-  #   ports:
-  #     - 25566:25566/udp
+  hc2:
+    container_name: hc2
+    image: ghcr.io/zhliau/fika-headless-docker:latest
+    volumes:
+      - /mnt/md0/sptd-test/hc2:/opt/tarkov:Z
+    # devices:
+    #   - /dev/ntsync:/dev/ntsync
+    environment:
+      - SERVER_URL=host.containers.internal
+      - SERVER_PORT=6969
+      - AUTO_RESTART_ON_RAID_END=true
+      - FSYNC=false
+      - ENABLE_LOG_PURGE=false
+      - USE_MODSYNC=true
+      - PROFILE_ID=68253357ab4d380021002267
+    ports:
+      - 25566:25566/udp
