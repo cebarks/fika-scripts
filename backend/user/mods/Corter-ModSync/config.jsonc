@@ -8,6 +8,18 @@
 			"name": "(Optional) Server mods",
 			"path": "user/mods",
 			"restartRequired": false
+		},
+		{
+			"enabled": true,
+			"name": "(Optional) Client Only Improvements",
+			"path": "BepInEx/plugins/client",
+			"restartRequired": true
+		},
+		{
+			"enabled": false,
+			"name": "(Optional) HideoutCat",
+			"path": "BepInEx/plugins/tarkin",
+			"restartRequired": true
 		}
 	],
 	"exclusions": [
@@ -47,10 +59,7 @@
 		"user/mods/**/*.js",
 		"user/mods/**/*.js.map",
 		"**/*:Zone.Identifier",
-		"BepInEx/plugins/AmandsGraphics.dll",
-		"BepInEx/plugins/CactusPie.RamCleanerInterval.dll",
-		"BepInEx/plugins/IhanaMies-LootValue.dll",
-		"BepInEx/plugins/DynamicMaps/**/*",
-		"BepInEx/plugins/MoreCheckmarks/**/*"
+		"BepInEx/plugins/tarki*",
+		"BepInEx/plugins/clien*"
 	]
 }
