@@ -13,20 +13,20 @@
   "more-scavs": {
     "scavGroupChance": 0.5,
     "scavMaxGroupSize": 5,
-    "scavWaveQuantity": 1.2
+    "scavWaveQuantity": 1.3
   },
   "more-pmcs": {
     "pmcGroupChance": 0.5,
-    "pmcMaxGroupSize": 5,
-    "pmcWaveQuantity": 1.2
+    "pmcMaxGroupSize": 6,
+    "pmcWaveQuantity": 1.3
   },
   "more-scavs-and-pmcs": {
     "scavGroupChance": 0.5,
     "scavMaxGroupSize": 5,
     "pmcGroupChance": 0.5,
     "pmcMaxGroupSize": 5,
-    "scavWaveQuantity": 1.1,
-    "pmcWaveQuantity": 1.2
+    "scavWaveQuantity": 1.3,
+    "pmcWaveQuantity": 1.3
   },
   "boss-invasion": {
     "bossOpenZones": true,

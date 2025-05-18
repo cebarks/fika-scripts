@@ -3,7 +3,7 @@
     "cases_insurance_enabled": false,
     "cases_flea_banned": true,
     "weightless_keys": true,
-    "no_key_use_limit": false,
+    "no_key_use_limit": true,
     "keys_are_discardable": true,
     "all_keys_in_secure": true,
     "allow_cases_in_special": false,

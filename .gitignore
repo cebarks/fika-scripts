@@ -71,4 +71,7 @@ backend/user/mods/lacyway-mergeconsumables/biome.json
 backend/BepInEx/patchers
 backend/BepInEx/plugins
 backend/backups/
-hc1/BepInEx/config/com.cactuspie.ramcleanerinterval.cfg
+com.cactuspie.ramcleanerinterval.cfg
+backend/user/mods/acidphantasm-stattrack/weaponStats.json
+backend/user/mods/acidphantasm-stattrack/weaponStats.json.bak
+xyz.drakia.questtracker.cfg
