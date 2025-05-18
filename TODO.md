@@ -1,7 +1,3 @@
-- remove skin service from DCs
-- look into emulating a client to request a dedicated host
-    - webui to chose raid settings instead of ingame
-    - preload raids before joining
 - scale dedicated clients in compose-yml based on justfile $clients
 
 

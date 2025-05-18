@@ -35,12 +35,13 @@ backend/SPT_Data/Server/checks.dat
 backend/SPT_Data/Server/database
 backend/SPT_Data/Server/images
 package.json
-src
+src/
+res/
 SPT_Patches
 .github
 .releaserc
 bundles.json
-bundles
+bundles/
 .buildignore
 backend/user/mods/MoxoPixel-BlackCore
 backend/user/mods/TarkovHDRework/Licence.txt

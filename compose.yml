@@ -34,7 +34,7 @@ services:
 
   hc2:
     container_name: hc2
-    image: ghcr.io/zhliau/fika-headless-docker:latest
+    image: ghcr.io/zhliau/fika-headless-docker:v2.1.0
     volumes:
       - /mnt/md0/sptd-test/hc2:/opt/tarkov:Z
     # devices:
@@ -42,7 +42,6 @@ services:
     environment:
       - SERVER_URL=host.containers.internal
       - SERVER_PORT=6969
-      - AUTO_RESTART_ON_RAID_END=true
       - FSYNC=false
       - ENABLE_LOG_PURGE=false
       - USE_MODSYNC=true

@@ -1,5 +1,5 @@
 base_dir := "/mnt/md0/sptd-test"
-clients := "1"
+clients := "2"
 
 backend_dir := base_dir / "backend"
 client_dir := base_dir / "hc"
@@ -16,14 +16,14 @@ stats:
 logs TARGET:
     podman-compose logs -f {{TARGET}}
 
-start:
+start: rm-client-mods
     podman-compose up -d backend hc{1..{{clients}}}
 
 stop:
     podman-compose down
 
 list-players:
-    curl --silent -X GET -H "responsecompressed: 0" http://localhost:6969/fika/presence/get | jq
+    curl --silent -X GET -H "responsecompressed: 0" https://localhost:6969/fika/presence/get | jq
 
 list-headless:
     curl --silent -X GET -H "responsecompressed: 0" https://localhost:6969/fika/headless/available -k | jq
@@ -66,3 +66,7 @@ ln-configs:
 set-configs:
     # set correct ports for dc2 & dc3
     sed -i 's/UDP Port = 25565/UDP Port = 25566/' {{base_dir}}/dc2/BepInEx/config/com.fika.core.cfg
+
+rm-client-mods:
+    rm -rf {{base_dir}}/hc1/BepInEx/client
+    rm -rf {{base_dir}}/hc2/BepInEx/client
