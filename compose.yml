@@ -29,8 +29,9 @@ services:
       - ENABLE_LOG_PURGE=false
       - USE_MODSYNC=true
       - PROFILE_ID=68253357ab4d3800210023a5
-    ports:
-      - 25565:25565/udp
+    network_mode: host
+    # ports:
+    #   - 25565:25565/udp
 
   hc2:
     container_name: hc2
@@ -46,5 +47,6 @@ services:
       - ENABLE_LOG_PURGE=false
       - USE_MODSYNC=true
       - PROFILE_ID=68253357ab4d380021002267
-    ports:
-      - 25566:25566/udp
+    network_mode: host
+    # ports:
+    #   - 25566:25566/udp

@@ -270,7 +270,7 @@
     },
     "EnableStats": false,
     "Skills": {
-      "SkillFatigueReset": 60,
+      "SkillFatigueReset": 30,
       "SkillFreshEffect": 1.3,
       "SkillFPoints": 1,
       "SkillPointsBeforeFatigue": 3,
@@ -617,23 +617,23 @@
         "Filter": false
       },
       "InjectorCase": {
-        "Height": 5,
-        "Width": 3,
+        "Height": 6,
+        "Width": 6,
         "Filter": false
       },
       "Holodilnick": {
-        "Height": 10,
-        "Width": 10,
+        "Height": 13,
+        "Width": 13,
         "Filter": false
       },
       "PistolCase": {
-        "Height": 4,
+        "Height": 5,
         "Width": 5,
         "Filter": false
       },
       "DocumentsCase": {
-        "Height": 4,
-        "Width": 4,
+        "Height": 6,
+        "Width": 3,
         "Filter": false
       },
       "Keytool": {
@@ -662,23 +662,23 @@
         "Filter": false
       },
       "DogtagCase": {
-        "Height": 10,
-        "Width": 10,
+        "Height": 13,
+        "Width": 13,
         "Filter": false
       },
       "MagazineCase": {
-        "Height": 7,
-        "Width": 7,
+        "Height": 8,
+        "Width": 8,
         "Filter": false
       },
       "AmmunitionCase": {
-        "Height": 7,
-        "Width": 7,
+        "Height": 8,
+        "Width": 8,
         "Filter": false
       },
       "WeaponCase": {
         "Height": 10,
-        "Width": 5,
+        "Width": 7,
         "Filter": false
       },
       "ItemsCase": {
@@ -687,8 +687,8 @@
         "Filter": false
       },
       "GrenadeCase": {
-        "Height": 8,
-        "Width": 8,
+        "Height": 10,
+        "Width": 10,
         "Filter": false
       },
       "WZWallet": {
@@ -702,8 +702,8 @@
         "Filter": false
       },
       "MoneyCase": {
-        "Height": 7,
-        "Width": 7,
+        "Height": 8,
+        "Width": 8,
         "Filter": false
       },
       "LuckyScav": {
@@ -717,8 +717,8 @@
         "Filter": false
       },
       "ArmorPlateCase": {
-        "Height": 12,
-        "Width": 8,
+        "Height": 14,
+        "Width": 10,
         "Filter": false
       }
     },

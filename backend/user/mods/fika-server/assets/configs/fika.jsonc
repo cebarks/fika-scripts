@@ -50,7 +50,7 @@
       "forceIp": ""
     },
     "setLevelToAverageOfLobby": true,
-    "restartAfterAmountOfRaids": 5
+    "restartAfterAmountOfRaids": 0
   },
   "background": {
     "enable": true,
