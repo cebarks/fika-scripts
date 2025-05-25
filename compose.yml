@@ -50,3 +50,21 @@ services:
     network_mode: host
     # ports:
     #   - 25566:25566/udp
+
+  hc3:
+    container_name: hc3
+    image: ghcr.io/zhliau/fika-headless-docker:v2.1.0
+    volumes:
+      - /mnt/md0/sptd-test/hc3:/opt/tarkov:Z
+    # devices:
+    #   - /dev/ntsync:/dev/ntsync
+    environment:
+      - SERVER_URL=host.containers.internal
+      - SERVER_PORT=6969
+      - FSYNC=false
+      - ENABLE_LOG_PURGE=false
+      - USE_MODSYNC=true
+      - PROFILE_ID=683269a600b90400222dec55
+    network_mode: host
+    # ports:
+    #   - 25567:25567/udp

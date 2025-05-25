@@ -6,7 +6,7 @@
     "allowFreeCam": true,
     "allowSpectateFreeCam": true,
     "blacklistedItems": [],
-    "forceSaveOnDeath": false,
+    "forceSaveOnDeath": true,
     "mods": {
       "required": [],
       "optional": []
@@ -42,7 +42,7 @@
   },
   "headless": {
     "profiles": {
-      "amount": "2",
+      "amount": "3",
       "aliases": {}
     },
     "scripts": {
