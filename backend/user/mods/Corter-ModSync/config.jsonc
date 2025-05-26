@@ -20,6 +20,12 @@
 			"name": "(Optional) HideoutCat",
 			"path": "BepInEx/plugins/tarkin",
 			"restartRequired": true
+		},
+		{
+			"enabled": false,
+			"name": "(Optional) Declutter",
+			"path": "BepInEx/plugins/somtam.SimpleDeClutter.dll",
+			"restartRequired": true
 		}
 	],
 	"exclusions": [
@@ -59,7 +65,9 @@
 		"user/mods/**/*.js",
 		"user/mods/**/*.js.map",
 		"**/*:Zone.Identifier",
+		// Optional Mods
 		"BepInEx/plugins/tarki*",
-		"BepInEx/plugins/clien*"
+		"BepInEx/plugins/clien*",
+		"BepInEx/plugins/somtam.SimpleDeClutter*"
 	]
 }

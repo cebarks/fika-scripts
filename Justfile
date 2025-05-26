@@ -67,8 +67,9 @@ ln-configs:
     stow --dir=config --target=. -R {{base_dir}}/backend {{base_dir}}/hc1 {{base_dir}}/hc2
 
 set-configs:
-    # set correct ports for dc2 & dc3
-    sed -i 's/UDP Port = 25565/UDP Port = 25566/' {{base_dir}}/dc2/BepInEx/config/com.fika.core.cfg
+    # set correct ports for hc2 & hc3
+    sed -i 's/UDP Port = 25565/UDP Port = 25566/' {{base_dir}}/hc2/BepInEx/config/com.fika.core.cfg
+    sed -i 's/UDP Port = 25565/UDP Port = 25567/' {{base_dir}}/hc3/BepInEx/config/com.fika.core.cfg
 
 rm-client-mods:
     rm -rf {{base_dir}}/hc1/BepInEx/client
