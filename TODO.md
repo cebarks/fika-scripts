@@ -9,3 +9,32 @@ curl -X POST -H "requestcompressed: 0" -H "Content-Type: application/json" -d '{
 
 
 ## SPT_data/Server/configs/backup.json
+
+## Config Notes
+### All the seasons
+```
+{
+  "enable": true,
+  "seasonLength": {
+    "SUMMER": 10,
+    "AUTUMN": 10,
+    "WINTER": 10,
+    "SPRING": 10,
+    "AUTUMN_LATE": 10,
+    "SPRING_EARLY": 10,
+    "STORM": 10
+  },
+  "randomSeason": true,
+  "randomSeasonWeighting": {
+    "SUMMER": 1,
+    "AUTUMN": 1,
+    "WINTER": 1,
+    "SPRING": 1,
+    "AUTUMN_LATE": 1,
+    "SPRING_EARLY": 1,
+    "STORM": 1
+  },
+  "enableMoodyDefault": true,
+  "consoleMessages": true
+}
+```

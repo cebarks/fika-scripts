@@ -15,6 +15,7 @@ services:
       - /mnt/md0/sptd-test/backend:/opt/server:Z
     network_mode: host
 
+
   hc1:
     container_name: hc1
     image: ghcr.io/zhliau/fika-headless-docker:v2.1.0
