@@ -10,7 +10,7 @@ services:
       - TAKE_OWNERSHIP=false
       - CHANGE_PERMISSIONS=false
       - TZ=America/Denver
-      - NUM_HEADLESS_PROFILES=2
+      - NUM_HEADLESS_PROFILES=3
     volumes:
       - /mnt/md0/sptd-test/backend:/opt/server:Z
     network_mode: host
