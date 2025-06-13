@@ -42,7 +42,7 @@
   },
   "headless": {
     "profiles": {
-      "amount": "3",
+      "amount": "4",
       "aliases": {}
     },
     "scripts": {

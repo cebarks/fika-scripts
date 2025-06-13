@@ -26,13 +26,14 @@
     "EnableItems": true,
     "ExamineExp": 1,
     "AmmoStacks": {
-      "MarksmanRound": 80,
-      "RifleRound": 120,
-      "ShotgunRound": 40,
-      "PistolRound": 100
+      "MarksmanRound": 100,
+      "RifleRound": 150,
+      "ShotgunRound": 60,
+      "PistolRound": 200
     },
     "AmmoSwitch": true,
     "EnableKeys": false,
+
     "RemoveRaidRestr": false,
     "RemoveBackpacksRestrictions": true,
     "AvoidSingleKeys": false,
@@ -55,7 +56,7 @@
   "Hideout": {
     "EnableStash": false,
     "Stash": {
-      "StashTUE": 72,
+      "StashTUE": 84,
       "StashLvl4": 68,
       "StashLvl3": 48,
       "StashLvl2": 38,

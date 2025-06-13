@@ -1,0 +1,25 @@
+{
+  "enable": true,
+  "enableSeasons": true,
+  "enableWeather": true,
+  "foreverSummer": false,
+  "endlessWinter": false,
+  
+  "enableChatbot": true,
+  
+  "seasonLength": {
+    "SUMMER": 2520,
+    "AUTUMN": 1680,
+    "WINTER": 2520,
+    "SPRING": 1680,
+    "AUTUMN_LATE": 840,
+    "SPRING_EARLY": 840
+  },
+  
+  "minWeatherDuration": 5,
+  "maxWeatherDuration": 15,
+  
+  "resetWeather": false,
+  "debugEnable": false,
+  "consoleMessages": false
+}
