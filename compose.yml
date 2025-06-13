@@ -10,7 +10,7 @@ services:
       - TAKE_OWNERSHIP=false
       - CHANGE_PERMISSIONS=false
       - TZ=America/Denver
-      - NUM_HEADLESS_PROFILES=3
+      - NUM_HEADLESS_PROFILES=4
     volumes:
       - /mnt/md0/sptd-test/backend:/opt/server:Z
     network_mode: host
@@ -24,6 +24,7 @@ services:
     # devices:
     #   - /dev/ntsync:/dev/ntsync
     environment:
+      - AUTO_RESTART_ON_RAID_END=true
       - SERVER_URL=host.containers.internal
       - SERVER_PORT=6969
       - FSYNC=false
@@ -42,6 +43,7 @@ services:
     # devices:
     #   - /dev/ntsync:/dev/ntsync
     environment:
+      - AUTO_RESTART_ON_RAID_END=true
       - SERVER_URL=host.containers.internal
       - SERVER_PORT=6969
       - FSYNC=false
@@ -60,6 +62,7 @@ services:
     # devices:
     #   - /dev/ntsync:/dev/ntsync
     environment:
+      - AUTO_RESTART_ON_RAID_END=true
       - SERVER_URL=host.containers.internal
       - SERVER_PORT=6969
       - FSYNC=false
@@ -69,3 +72,21 @@ services:
     network_mode: host
     # ports:
     #   - 25567:25567/udp
+
+  hc4:
+    container_name: hc4
+    image: ghcr.io/zhliau/fika-headless-docker:v2.1.0
+    volumes:
+      - /mnt/md0/sptd-test/hc4:/opt/tarkov:Z
+    # devices:
+    #   - /dev/ntsync:/dev/ntsync
+    environment:
+      - SERVER_URL=host.containers.internal
+      - SERVER_PORT=6969
+      - FSYNC=false
+      - ENABLE_LOG_PURGE=false
+      - USE_MODSYNC=true
+      - PROFILE_ID=684b5ffd85436000220029e7
+    network_mode: host
+    # ports:
+    #   - 25568:25568/udp
