@@ -17,7 +17,7 @@
     "WeightChanger": 1,
     "ItemPriceMult": 1,
     "EnableCurrency": true,
-    "RubStack": 1000000,
+    "RubStack": 2500000,
     "DollarStack": 100000,
     "GPStack": 100,
     "EuroStack": 100000,

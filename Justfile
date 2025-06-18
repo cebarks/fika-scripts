@@ -74,6 +74,12 @@ set-configs:
     sed -i 's/UDP Port = 25565/UDP Port = 25567/' {{base_dir}}/hc3/BepInEx/config/com.fika.core.cfg
     sed -i 's/UDP Port = 25565/UDP Port = 25568/' {{base_dir}}/hc4/BepInEx/config/com.fika.core.cfg
 
+    #make sure MOAR preset is correctly set
+    sed -i 's/Moar Preset = .*/Moar Preset = Random/' {{base_dir}}/hc1/BepInEx/config/MOAR.settings.cfg
+    sed -i 's/Moar Preset = .*/Moar Preset = Random/' {{base_dir}}/hc2/BepInEx/config/MOAR.settings.cfg
+    sed -i 's/Moar Preset = .*/Moar Preset = Random/' {{base_dir}}/hc3/BepInEx/config/MOAR.settings.cfg
+    sed -i 's/Moar Preset = .*/Moar Preset = Random/' {{base_dir}}/hc4/BepInEx/config/MOAR.settings.cfg
+
 rm-client-mods:
     rm -rf {{base_dir}}/hc1/BepInEx/client
     rm -rf {{base_dir}}/hc2/BepInEx/client
