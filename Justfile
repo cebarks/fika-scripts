@@ -19,7 +19,7 @@ stats:
 logs TARGET:
     podman-compose logs -f {{TARGET}}
 
-start: rm-client-mods
+start: rm-client-mods set-configs
     podman-compose up -d backend hc{1..{{clients}}}
 
 stop:
@@ -81,12 +81,12 @@ set-configs:
     sed -i 's/Moar Preset = .*/Moar Preset = Random/' {{base_dir}}/hc4/BepInEx/config/MOAR.settings.cfg
 
 rm-client-mods:
-    rm -rf {{base_dir}}/hc1/BepInEx/client
-    rm -rf {{base_dir}}/hc2/BepInEx/client
-    rm -rf {{base_dir}}/hc3/BepInEx/client
-    rm -rf {{base_dir}}/hc4/BepInEx/client
+    rm -rfv {{base_dir}}/hc1/BepInEx/client
+    rm -rfv {{base_dir}}/hc2/BepInEx/client
+    rm -rfv {{base_dir}}/hc3/BepInEx/client
+    rm -rfv {{base_dir}}/hc4/BepInEx/client
 
-    rm -rf {{base_dir}}/hc1/user/mods
-    rm -rf {{base_dir}}/hc2/user/mods
-    rm -rf {{base_dir}}/hc3/user/mods
-    rm -rf {{base_dir}}/hc4/user/mods
+    rm -rfv {{base_dir}}/hc1/user/mods
+    rm -rfv {{base_dir}}/hc2/user/mods
+    rm -rfv {{base_dir}}/hc3/user/mods
+    rm -rfv {{base_dir}}/hc4/user/mods
