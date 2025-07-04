@@ -52,7 +52,7 @@ list-mods:
     ls -1d {{backend_dir}}/user/mods/*
     find {{backend_dir}}/BepInEx/plugins -name "*.dll"
 
-cleanup:
+cleanup: rm-client-mods
     find {{base_dir}} -name "LICENSE-*" -delete -print
 
 dry-cleanup:
