@@ -23,7 +23,8 @@
   "customs": {
     "bossKnight": 18,
     "bossPartisan": 8,
-    "bossBully": 30
+    "bossBully": 30,
+    "sectantPriest": 35
   },
   "factoryDay": {
     "bossTagilla": 30
@@ -45,7 +46,8 @@
   "shoreline": {
     "bossKnight": 18,
     "bossPartisan": 8,
-    "bossSanitar": 30
+    "bossSanitar": 30,
+    "sectantPriest": 35
   },
   "tarkovstreets": {
     "bossBoar": 30,
@@ -54,10 +56,12 @@
   "woods": {
     "bossKojaniy": 30,
     "bossKnight": 18,
-    "bossPartisan": 8
+    "bossPartisan": 8,
+    "sectantPriest": 35
   },
   "gzLow": {},
   "gzHigh": {
-    "bossKolontay": 30
+    "bossKolontay": 30,
+    "sectantPriest": 20
   }
 }

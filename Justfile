@@ -47,10 +47,6 @@ restart-backend:
 
 copy-mods:
     cp -rv /export/public/mods/* {{backend_dir}}
-    cp -r /export/public/mods/* {{base_dir}}/hc1
-    cp -r /export/public/mods/* {{base_dir}}/hc2
-    cp -r /export/public/mods/* {{base_dir}}/hc3
-    cp -r /export/public/mods/* {{base_dir}}/hc4
 
 list-mods:
     ls -1d {{backend_dir}}/user/mods/*
