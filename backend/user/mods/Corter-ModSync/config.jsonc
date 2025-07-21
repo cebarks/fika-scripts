@@ -26,6 +26,12 @@
 			"name": "(Optional) Declutter",
 			"path": "BepInEx/plugins/somtam.SimpleDeClutter.dll",
 			"restartRequired": true
+		},
+		{
+			"enabled": true,
+			"name": "(Optional) BeltSlot",
+			"path": "BepInEx/plugins/BeltSlot/BeltSlot.dll",
+			"restartRequired": true
 		}
 	],
 	"exclusions": [
@@ -68,6 +74,7 @@
 		// Optional Mods
 		"BepInEx/plugins/tarki*",
 		"BepInEx/plugins/clien*",
-		"BepInEx/plugins/somtam.SimpleDeClutter*"
+		"BepInEx/plugins/somtam.SimpleDeClutter*",
+		"BepInEx/plugins/BeltSlot/*"
 	]
 }
