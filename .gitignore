@@ -12,6 +12,7 @@ README*
 *.dxvk-cache
 *.exe
 *.dll
+*.png
 
 src/
 res/

@@ -98,7 +98,7 @@
     "mapCullingNearPointValueScav": 1,
     "spawnMinDistance": 30,
     "pmcWaveCount": 11,
-    "scavWaveCount": 28,
+    "scavWaveCount": 24,
     "zombieWaveCount": 9,
     "scavHotZones": [
       "ZoneRailStrorage"
