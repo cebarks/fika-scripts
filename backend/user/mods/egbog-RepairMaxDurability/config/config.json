@@ -1,7 +1,7 @@
 {
-    "Price": 100000,
-    "MaxRepairResource": 5,
-    "CraftTime": 1200,
+    "Price": 1000000,
+    "MaxRepairResource": 25,
+    "CraftTime": 12000,
     "Traders": [
         {
             "_info": "name is case sensitive ie. Prapor, Peacekeeper, etc.",
