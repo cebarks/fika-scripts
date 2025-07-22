@@ -6,7 +6,20 @@
   "additionalScavLoot": ["5c94bbff86f7747ee735c08f"],
   "botAmmoRandomness": 0.1,
   "botEquipmentRandomness": 0.3,
-  "ignoreList": ["add names of bot types here you DONT want alp to touch"],
+  "ignoreList": [
+    "bossboar",
+    "bosspartisan",
+    "bossbully",
+    "bosstagilla",
+    "bossgluhar",
+    "bosskilla",
+    "bosskojaniy",
+    "bosskolontay",
+    "bossknight",
+    "bosssanitar",
+    "followerbirdeye",
+    "followerbigpipe"
+  ],
   "Example_______IgnoreList": [
     "bosspartisan",
     "bossbully",
@@ -527,7 +540,7 @@
         [16, 29],
         [30, 100]
       ],
-      "Ammo": [0, 0.4],
+      "Ammo": [0, 0.3],
       "Holster": [0, 0.6],
       "FirstPrimaryWeapon": [0, 0.6],
       "Backpack": [0, 0.3],

@@ -45,9 +45,9 @@
     "5": [2, 4, 6, 9, 4]
   },
   "strictEquipmentTiering": true,
-  "higherTierAmmoChance": 0.3,
+  "higherTierAmmoChance": 0.1,
   "randomness": {
-    "Ammo": 0.3,
+    "Ammo": 0.2,
     "Holster": 0.2,
     "Headwear": 0.3,
     "FirstPrimaryWeapon": 0.3,
