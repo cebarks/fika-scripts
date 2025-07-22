@@ -1,5 +1,5 @@
 # Config
-base_dir := "/mnt/md0/sptd-test"
+base_dir := "/mnt/md0/sptd"
 clients := "4"
 
 
