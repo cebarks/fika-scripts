@@ -1,76 +1,100 @@
 services:
   backend:
-    container_name: spt-backend
-    image: ghcr.io/zhliau/fika-spt-server-docker:3.10.5
+    container_name: backend
+    image: ghcr.io/zhliau/fika-spt-server-docker:3.11.3
     environment:
       - INSTALL_FIKA=true
       - LISTEN_ALL_NETWORKS=true
       - AUTO_UPDATE_FIKA=true
-      - AUTO_UPDATE_SPT=true
+      - AUTO_UPDATE_SPT=false
+      - TAKE_OWNERSHIP=false
+      - CHANGE_PERMISSIONS=false
       - TZ=America/Denver
+      - NUM_HEADLESS_PROFILES=4
     volumes:
-      - /mnt/tank/sptd/backend:/opt/server:Z
+      - /mnt/md0/sptd/backend:/opt/server:Z
     network_mode: host
-    # healthcheck:
-    #   test: ["CMD-SHELL", "curl --fail -X GET -H 'responsecompressed: 0' http://mars.grv.st:6969/fika/presence/get || false"]
-    #   interval: 30s
-    #   retries: 12
-    #   start_period: 30s
-    #   timeout: 3s
 
-  dc1:
-    container_name: fika-dc1
-    image: ghcr.io/zhliau/fika-headless-docker:latest
-    volumes:
-      - /mnt/tank/sptd/dc1:/opt/tarkov:Z
-    environment:
-      - SERVER_URL=host.containers.internal
-      - SERVER_PORT=6969
-      - AUTO_RESTART_ON_RAID_END=true
-      - ESYNC=true
-      - ENABLE_LOG_PURGE=false
-      - PROFILE_ID=6754ba4e000485cf3aeccebc
-    ports:
-      - 25565:25565/udp
-    # depends_on:
-    #   backend:
-    #     condition: service_healthy
-    #     restart: true
 
-  dc2:
-    container_name: fika-dc2
-    image: ghcr.io/zhliau/fika-headless-docker:latest
+  hc1:
+    container_name: hc1
+    # image: ghcr.io/zhliau/fika-headless-docker:v2.1.0
+    image: localhost/fika-dedicated:latest
     volumes:
-      - /mnt/tank/sptd/dc2:/opt/tarkov:Z
+      - /mnt/md0/sptd/hc1:/opt/tarkov:Z
+    devices:
+      - /dev/ntsync:/dev/ntsync
     environment:
-      - SERVER_URL=host.containers.internal
-      - SERVER_PORT=6969
       - AUTO_RESTART_ON_RAID_END=true
-      - ESYNC=true
+      - SERVER_URL=mars.grv.st
+      - SERVER_PORT=6969
+      - FSYNC=false
+      - NTSYNC=true
       - ENABLE_LOG_PURGE=false
-      - PROFILE_ID=67551cc900048c617b771167
-    ports:
-      - 25566:25566/udp
-    # depends_on:
-    #   backend:
-    #     condition: service_healthy
-    #     restart: true
+      - USE_MODSYNC=true
+      - PROFILE_ID=68253357ab4d3800210023a5
+    network_mode: host
+    # ports:
+    #   - 25565:25565/udp
 
-  dc3:
-    container_name: fika-dc3
-    image: ghcr.io/zhliau/fika-headless-docker:latest
+  hc2:
+    container_name: hc2
+    # image: ghcr.io/zhliau/fika-headless-docker:v2.1.0
+    image: localhost/fika-dedicated:latest
     volumes:
-      - /mnt/tank/sptd/dc3:/opt/tarkov:Z
+      - /mnt/md0/sptd/hc2:/opt/tarkov:Z
+    devices:
+      - /dev/ntsync:/dev/ntsync
     environment:
-      - SERVER_URL=host.containers.internal
-      - SERVER_PORT=6969
       - AUTO_RESTART_ON_RAID_END=true
-      - ESYNC=true
+      - SERVER_URL=mars.grv.st
+      - SERVER_PORT=6969
+      - FSYNC=false
+      - NTSYNC=true
       - ENABLE_LOG_PURGE=false
-      - PROFILE_ID=67560726000064270bab9f4e
-    ports:
-      - 25567:25567/udp
-    # depends_on:
-    #   backend:
-    #     condition: service_healthy
-    #     restart: true
+      - USE_MODSYNC=true
+      - PROFILE_ID=68253357ab4d380021002267
+    network_mode: host
+    # ports:
+    #   - 25566:25566/udp
+
+  hc3:
+    container_name: hc3
+    # image: ghcr.io/zhliau/fika-headless-docker:v2.1.0
+    image: localhost/fika-dedicated:latest
+    volumes:
+      - /mnt/md0/sptd/hc3:/opt/tarkov:Z
+    devices:
+      - /dev/ntsync:/dev/ntsync
+    environment:
+      - AUTO_RESTART_ON_RAID_END=true
+      - SERVER_URL=mars.grv.st
+      - SERVER_PORT=6969
+      - FSYNC=false
+      - NTSYNC=true
+      - ENABLE_LOG_PURGE=false
+      - USE_MODSYNC=true
+      - PROFILE_ID=683269a600b90400222dec55
+    network_mode: host
+    # ports:
+    #   - 25567:25567/udp
+
+  hc4:
+    container_name: hc4
+    # image: ghcr.io/zhliau/fika-headless-docker:v2.1.0
+    image: localhost/fika-dedicated:latest
+    volumes:
+      - /mnt/md0/sptd/hc4:/opt/tarkov:Z
+    devices:
+      - /dev/ntsync:/dev/ntsync
+    environment:
+      - SERVER_URL=mars.grv.st
+      - SERVER_PORT=6969
+      - FSYNC=false
+      - NTSYNC=true
+      - ENABLE_LOG_PURGE=false
+      - USE_MODSYNC=true
+      - PROFILE_ID=684b5ffd85436000220029e7
+    network_mode: host
+    # ports:
+    #   - 25568:25568/udp

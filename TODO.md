@@ -1,7 +1,4 @@
-remove skin service from DCs
-add MOAR settings to `set-config`
-remove quest tracker
-look into emulating a client request a dedicated host
+- scale dedicated clients in compose-yml based on justfile $clients
 
 
 ## Get presence of connected players
